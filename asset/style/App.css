@@ -1,0 +1,34 @@
+.fc .fc-toolbar-title {
+    color: #4b44df;
+    font-size: 14px;
+    font-weight: bolder;
+}
+
+.fc .fc-daygrid-day-number {
+    color: #4b44df;
+}
+
+.fc .fc-col-header-cell-cushion {
+    color: #A098AE;
+    font-weight: lighter;
+}
+
+.fc-direction-ltr .fc-button-group .fc-button {
+    background: #4b44df;
+    border: #F3F4FF;
+}
+.fc .fc-button-primary {
+    background: #4b44df;
+    padding: 2px 5px;
+    align-content: center;
+}
+.fc .fc-button-primary:disabled {
+    background: #4b44df;
+}
+.fc-event-title-container {
+    background: #4b44df; 
+    border: none;
+}
+
+
+

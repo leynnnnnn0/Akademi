@@ -1,0 +1,1 @@
+<h1 class="font-bold text-indigo-600 text-3xl mb-4"><?= $heading ?></h1>
