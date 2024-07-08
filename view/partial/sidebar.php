@@ -1,21 +1,27 @@
 <div class="grid grid-cols-5 w-full h-full">
     <div class="bg-indigo-600 col-span-1 pl-8">
         <div class="flex items-center h-32">
-            <img src="asset/image/logo.png" height="20" width="30" alt="Logo">
+            <img src="/akademi/asset/image/logo.png" height="20" width="30" alt="Logo">
             <h1 class="text-white font-bold text-2xl ml-2">AKADEMI</h1>
         </div>
         <div class="grid grid-rows-5">
-            <div class="flex items-center w-full h-12 text-indigo-50 rounded-l-3xl py-2 px-4 cursor-pointer bg-indigo-50 text-indigo-600">
-                <span class="mr-4"><i class="bi bi-card-list"></i></span>
-                Dashboard
+            <div class="flex items-center w-full h-12 text-indigo-50 rounded-l-3xl py-2 px-4 cursor-pointer <?= isUrl("/akademi/") ?>">
+                <a href="/akademi/">
+                    <span class="mr-4"><i class="bi bi-card-list"></i></span>
+                    Dashboard
+                </a>
             </div>
-            <div class="flex items-center w-full h-12 text-indigo-50 rounded-xl py-2 px-4 rounded-l-3xl cursor-pointer">
-                <span class="mr-4"><i class="bi bi-backpack"></i></span>
-                Students
+            <div class="flex items-center w-full h-12 py-2 px-4 rounded-l-3xl cursor-pointer <?= isUrl("/akademi/index.php/students") ?>">
+                <a href="/akademi/index.php/students">
+                    <span class="mr-4"><i class="bi bi-backpack"></i></span>
+                    Students
+                </a>
             </div>
-            <div class="flex items-center w-full h-12 text-indigo-50 rounded-xl py-2 px-4 rounded-l-3xl cursor-pointer">
-                <span class="mr-4"><i class="bi bi-briefcase"></i></span>
-                Teachers
+            <div class="flex items-center w-full h-12 py-2 px-4 rounded-l-3xl  cursor-pointer <?= isUrl("/akademi/index.php/teachers") ?>">
+                <a href="/akademi/index.php/teachers">
+                    <span class="mr-4"><i class="bi bi-briefcase"></i></span>
+                    Teachers
+                </a>
             </div>
             <div class="flex items-center w-full h-12 text-indigo-50 rounded-xl py-2 px-4 rounded-l-3xl cursor-pointer">
                 <span class="mr-4"><i class="bi bi-calendar4-event"></i></span>
