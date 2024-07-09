@@ -14,6 +14,16 @@ class Validator
         return false;
     }
 
+    public static function is_email_unique(string $email): bool
+    {
+        $config = require 'Core/database/config.php';
+        $db = new Database($config['database']);
+        $stmt = $db->query("SELECT * from students WHERE email = :email;", [":email" => $email]);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        if ($result) return true;
+        return false;
+    }
+
     public static function string(string $string): bool
     {
         return self::is_null_or_empty($string);
@@ -26,7 +36,7 @@ class Validator
 
     public static function phone(string $phone): bool
     {
-        return ((int) $phone) == 0 || strlen($phone) != 10;
+        return strlen($phone) != 10;
     }
 
     public static function date(string $date)

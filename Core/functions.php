@@ -28,3 +28,8 @@ function flashError(string $key)
         return $_SESSION['errors'][$key];
     }
 }
+
+function showRecentInput(string $key)
+{
+     if(isset($_SESSION['details'][$key])) return htmlspecialchars($_SESSION['details'][$key]);
+}

@@ -22,13 +22,15 @@ class PersonalInformationForm
         if (Validator::email($email)) {
             $this->errors['email'] = 'Please input a valid email';
         }
+        if (Validator::is_email_unique($email)) {
+            $this->errors['email'] = 'Email is already used';
+        }
         if (Validator::phone($phoneNumber)) {
-            $this->errors['phoneNUmber'] = 'Please input a valid phone number.';
+            $this->errors['phoneNumber'] = 'Please input a valid phone number.';
         }
         if (Validator::string($address)) {
             $this->errors['address'] = "Address is required.";
         }
-
         return !empty($this->errors);
     }
 }

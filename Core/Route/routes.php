@@ -10,3 +10,4 @@ $router->get("/akademi/index.php/events", "controller/event.php");
 
 // Students
 $router->post("/akademi/index.php/students/add", "controller/student/create.php");
+$router->get("/akademi/index.php/students/edit", "controller/editStudent.php");

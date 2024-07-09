@@ -8,64 +8,67 @@ require 'view/partial/banner.php';
     <div class="h-15 bg-indigo-600 py-2 px-5 rounded-t-2xl">
         <p class="text-white font-semibold text-lg">Personal Details</p>
     </div>
-    <form class="grid grid-cols-2 gap-4 h-fit rounded-b-2xl bg-white p-5" method="post" enctype="multipart/form-data">
+    <form class="grid grid-cols-5 gap-4 h-fit rounded-b-2xl bg-white p-5" method="post" enctype="multipart/form-data">
+        <!-- Column 0 -->
+        <div>
+            <input type="text" hidden value="<?= $student['id'] ?>">
+            <img src="/akademi/asset/image/students/<?= $student['image'] ?>" class="h-24 w-24 rounded-full" alt="profile">
+        </div>
         <!-- Column 1 -->
-        <div class="flex flex-col gap-2">
+        <div class="flex flex-col gap-2 col-span-2">
             <div class="flex flex-col gap-2">
-                <label for="photo" class="text-indigo-900 font-bold text-sm">Photo *</label>
-                <input type="file" accept=".jpg, .png, .jpeg" name="photo" id="photo" class="border border-gray-300 h-8 rounded-md">
-                <p class="text-red-500 text-xs">
-                    <?= Session::get_error('photo') ?>
-                </p>
+
+                <label for="photo" class="text-indigo-900 font-bold text-sm">Photo</label>
+                <input type="file" accept=".jpg, .png, .jpeg" name="photo" id="photo" class="border border-gray-300 h-8 rounded-md" value="<?= $student['image'] ?>">
             </div>
-            <div class="flex flex-col gap-2">
+            <div class="flex flex-col gap-2 ">
                 <label for="firstName" class="text-indigo-900 font-bold text-sm">First Name *</label>
-                <input placeholder="John" type="text" name="firstName" id="firstName" class="border border-gray-300 h-8 rounded-md" value="<?= Session::get_recent_input('firstName') ?>">
+                <input placeholder="John" type="text" name="firstName" id="firstName" class="border border-gray-300 h-8 rounded-md" value="<?= $student['firstName'] ?>">
                 <p class="text-red-500 text-xs">
-                    <?= Session::get_error('firstName') ?>
+                    <?= flashError('firstName') ?>
                 </p>
             </div>
             <div class="flex flex-col gap-2">
                 <label for="middleInitial" class="text-indigo-900 font-bold text-sm">Middle Initial</label>
-                <input placeholder="Hawt" type="text" name="middleInitial" id="middleInitial" class="border border-gray-300 h-8 rounded-md" value="<?= Session::get_recent_input('middleInitial') ?>">
+                <input placeholder="Hawt" type="text" name="middleInitial" id="middleInitial" class="border border-gray-300 h-8 rounded-md" value="<?= $student['middleName'] ?>">
             </div>
             <div class="flex flex-col gap-2">
                 <label for="lastName" class="text-indigo-900 font-bold text-sm">Last Name *</label>
-                <input placeholder="Doe" type="text" name="lastName" id="lastName" class="border border-gray-300 h-8 rounded-md" value="<?= Session::get_recent_input('lastName') ?>">
+                <input placeholder="Doe" type="text" name="lastName" id="lastName" class="border border-gray-300 h-8 rounded-md" value="<?= $student['lastName'] ?>">
                 <p class="text-red-500 text-xs">
-                    <?= Session::get_error('lastName') ?>
+                    <?= flashError('lastName') ?>
                 </p>
             </div>
             <div class="flex flex-col gap-2">
                 <label for="dateOfBirth" class="text-indigo-900 font-bold text-sm">Date of Birth *</label>
-                <input type="date" name="dateOfBirth" id="dateOfBirth" class="border border-gray-300 h-8 rounded-md" value="<?= Session::get_recent_input('dateOfBirth') ?>">
+                <input type="date" name="dateOfBirth" id="dateOfBirth" class="border border-gray-300 h-8 rounded-md" value="<?= $student['dateOfBirth'] ?>">
                 <p class="text-red-500 text-xs">
-                    <?= Session::get_error('dateOfBirth') ?>
+                    <?= flashError('dateOfBirth') ?>
                 </p>
             </div>
 
         </div>
         <!-- Column 2 -->
-        <div class="flex flex-col gap-2">
+        <div class="flex flex-col gap-2 col-span-2">
             <div class="flex flex-col gap-2">
                 <label for="email" class="text-indigo-900 font-bold text-sm">Email *</label>
-                <input placeholder="johndoe@gmail.com" type="email" name="email" id="email" class="border border-gray-300 h-8 rounded-md" value="<?= Session::get_recent_input('email') ?>">
+                <input placeholder="johndoe@gmail.com" type="email" name="email" id="email" class="border border-gray-300 h-8 rounded-md" value="<?= $student['email'] ?>">
                 <p class="text-red-500 text-xs">
-                    <?= Session::get_error('email') ?>
+                    <?= flashError('email') ?>
                 </p>
             </div>
             <div class="flex flex-col gap-2">
                 <label for="phoneNumber" class="text-indigo-900 font-bold text-sm">Phone Number *</label>
-                <input placeholder="92********" type="text" name="phoneNumber" id="phoneNumber" class="border border-gray-300 h-8 rounded-md" value="<?= Session::get_recent_input('phoneNumber') ?>">
+                <input placeholder="92********" type="text" name="phoneNumber" id="phoneNumber" class="border border-gray-300 h-8 rounded-md" value="<?= $student['phoneNumber'] ?>">
                 <p class="text-red-500 text-xs">
-                    <?= Session::get_error('phoneNumber') ?>
+                    <?= flashError('phoneNumber') ?>
                 </p>
             </div>
             <div class="flex flex-col gap-2">
                 <label for="address" class="text-indigo-900 font-bold text-sm">Address *</label>
-                <textarea placeholder="California, USA" type="text" name="address" id="address" class="border border-gray-300 h-20 rounded-md"><?= Session::get_recent_input('address') ?></textarea>
+                <textarea placeholder="California, USA" type="text" name="address" id="address" class="border border-gray-300 h-20 rounded-md"><?= $student['address'] ?></textarea>
                 <p class="text-red-500 text-xs">
-                    <?= Session::get_error('address') ?>
+                    <?= flashError('address') ?>
                 </p>
             </div>
             <div class="flex h-full justify-end items-end">

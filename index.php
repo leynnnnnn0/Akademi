@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+require 'Core/Session.php';
 require 'Core/functions.php';
 require 'Core/database/Database.php';
 require 'Core/Route/Router.php';
@@ -12,3 +13,4 @@ $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 $method = $_SERVER['REQUEST_METHOD'];
 $router->route($uri, $method);
 
+Session::unset();
