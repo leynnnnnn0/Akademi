@@ -21,3 +21,10 @@ function base_path(string $string)
 {
     return __DIR__ . "/../" . $string;
 }
+
+function flashError(string $key)
+{
+    if (isset($_SESSION['errors'][$key])) {
+        return $_SESSION['errors'][$key];
+    }
+}

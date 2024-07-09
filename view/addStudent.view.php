@@ -8,16 +8,23 @@ require 'view/partial/banner.php';
     <div class="h-15 bg-indigo-600 py-2 px-5 rounded-t-2xl">
         <p class="text-white font-semibold text-lg">Personal Details</p>
     </div>
-    <form class="grid grid-cols-2 gap-4 h-[400px] rounded-b-2xl bg-white p-5" method="post">
+    <form class="grid grid-cols-2 gap-4 h-fit rounded-b-2xl bg-white p-5" method="post" enctype="multipart/form-data">
         <!-- Column 1 -->
         <div class="flex flex-col gap-2">
             <div class="flex flex-col gap-2">
                 <label for="photo" class="text-indigo-900 font-bold text-sm">Photo *</label>
-                <input type="file" name="photo" id="photo" class="border border-gray-300 h-8 rounded-md">
+                <input type="file" accept=".jpg, .png, .jpeg" name="photo" id="photo" class="border border-gray-300 h-8 rounded-md">
+                <p class="text-red-500 text-xs">
+                    <?= flashError('photo') ?>
+                </p>
+
             </div>
             <div class="flex flex-col gap-2">
                 <label for="firstName" class="text-indigo-900 font-bold text-sm">First Name *</label>
                 <input placeholder="John" type="text" name="firstName" id="firstName" class="border border-gray-300 h-8 rounded-md">
+                <p class="text-red-500 text-xs">
+                    <?= flashError('firstName') ?>
+                </p>
             </div>
             <div class="flex flex-col gap-2">
                 <label for="middleInitial" class="text-indigo-900 font-bold text-sm">Middle Initial</label>
@@ -26,10 +33,16 @@ require 'view/partial/banner.php';
             <div class="flex flex-col gap-2">
                 <label for="lastName" class="text-indigo-900 font-bold text-sm">Last Name *</label>
                 <input placeholder="Doe" type="text" name="lastName" id="lastName" class="border border-gray-300 h-8 rounded-md">
+                <p class="text-red-500 text-xs">
+                    <?= flashError('lastName') ?>
+                </p>
             </div>
             <div class="flex flex-col gap-2">
                 <label for="dateOfBirth" class="text-indigo-900 font-bold text-sm">Date of Birth *</label>
                 <input type="date" name="dateOfBirth" id="dateOfBirth" class="border border-gray-300 h-8 rounded-md">
+                <p class="text-red-500 text-xs">
+                    <?= flashError('dateOfBirth') ?>
+                </p>
             </div>
 
         </div>
@@ -38,14 +51,23 @@ require 'view/partial/banner.php';
             <div class="flex flex-col gap-2">
                 <label for="email" class="text-indigo-900 font-bold text-sm">Email *</label>
                 <input placeholder="johndoe@gmail.com" type="email" name="email" id="email" class="border border-gray-300 h-8 rounded-md">
+                <p class="text-red-500 text-xs">
+                    <?= flashError('email') ?>
+                </p>
             </div>
             <div class="flex flex-col gap-2">
                 <label for="phoneNumber" class="text-indigo-900 font-bold text-sm">Phone Number *</label>
                 <input placeholder="92********" type="text" name="phoneNumber" id="phoneNumber" class="border border-gray-300 h-8 rounded-md">
+                <p class="text-red-500 text-xs">
+                    <?= flashError('phoneNumber') ?>
+                </p>
             </div>
             <div class="flex flex-col gap-2">
                 <label for="address" class="text-indigo-900 font-bold text-sm">Address *</label>
                 <textarea placeholder="California, USA" type="text" name="address" id="address" class="border border-gray-300 h-20 rounded-md"></textarea>
+                <p class="text-red-500 text-xs">
+                    <?= flashError('address') ?>
+                </p>
             </div>
             <div class="flex h-full justify-end items-end">
                 <div class="flex gap-2">
