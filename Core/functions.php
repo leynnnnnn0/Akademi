@@ -22,14 +22,21 @@ function base_path(string $string)
     return __DIR__ . "/../" . $string;
 }
 
-function flashError(string $key)
+
+function redirect(string $path)
 {
-    if (isset($_SESSION['errors'][$key])) {
-        return $_SESSION['errors'][$key];
-    }
+    header("location: $path");
+    die();
 }
 
-function showRecentInput(string $key)
+function get_database()
 {
-     if(isset($_SESSION['details'][$key])) return htmlspecialchars($_SESSION['details'][$key]);
+    $config = require 'Core/database/config.php';
+    return new Database($config['database']);
+}
+
+function view($path, $data = [])
+{
+    extract($data);
+    return require "view/$path";
 }

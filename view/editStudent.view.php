@@ -25,7 +25,7 @@ require 'view/partial/banner.php';
                 <label for="firstName" class="text-indigo-900 font-bold text-sm">First Name *</label>
                 <input placeholder="John" type="text" name="firstName" id="firstName" class="border border-gray-300 h-8 rounded-md" value="<?= $student['firstName'] ?>">
                 <p class="text-red-500 text-xs">
-                    <?= flashError('firstName') ?>
+                    <?= Session::get_error('firstName') ?>
                 </p>
             </div>
             <div class="flex flex-col gap-2">
@@ -36,14 +36,14 @@ require 'view/partial/banner.php';
                 <label for="lastName" class="text-indigo-900 font-bold text-sm">Last Name *</label>
                 <input placeholder="Doe" type="text" name="lastName" id="lastName" class="border border-gray-300 h-8 rounded-md" value="<?= $student['lastName'] ?>">
                 <p class="text-red-500 text-xs">
-                    <?= flashError('lastName') ?>
+                    <?= Session::get_error('lastName') ?>
                 </p>
             </div>
             <div class="flex flex-col gap-2">
                 <label for="dateOfBirth" class="text-indigo-900 font-bold text-sm">Date of Birth *</label>
                 <input type="date" name="dateOfBirth" id="dateOfBirth" class="border border-gray-300 h-8 rounded-md" value="<?= $student['dateOfBirth'] ?>">
                 <p class="text-red-500 text-xs">
-                    <?= flashError('dateOfBirth') ?>
+                    <?= Session::get_error('dateOfBirth') ?>
                 </p>
             </div>
 
@@ -54,21 +54,21 @@ require 'view/partial/banner.php';
                 <label for="email" class="text-indigo-900 font-bold text-sm">Email *</label>
                 <input placeholder="johndoe@gmail.com" type="email" name="email" id="email" class="border border-gray-300 h-8 rounded-md" value="<?= $student['email'] ?>">
                 <p class="text-red-500 text-xs">
-                    <?= flashError('email') ?>
+                    <?= Session::get_error('email') ?>
                 </p>
             </div>
             <div class="flex flex-col gap-2">
                 <label for="phoneNumber" class="text-indigo-900 font-bold text-sm">Phone Number *</label>
                 <input placeholder="92********" type="text" name="phoneNumber" id="phoneNumber" class="border border-gray-300 h-8 rounded-md" value="<?= $student['phoneNumber'] ?>">
                 <p class="text-red-500 text-xs">
-                    <?= flashError('phoneNumber') ?>
+                    <?= Session::get_error('phoneNumber') ?>
                 </p>
             </div>
             <div class="flex flex-col gap-2">
                 <label for="address" class="text-indigo-900 font-bold text-sm">Address *</label>
                 <textarea placeholder="California, USA" type="text" name="address" id="address" class="border border-gray-300 h-20 rounded-md"><?= $student['address'] ?></textarea>
                 <p class="text-red-500 text-xs">
-                    <?= flashError('address') ?>
+                    <?= Session::get_error('address') ?>
                 </p>
             </div>
             <div class="flex h-full justify-end items-end">

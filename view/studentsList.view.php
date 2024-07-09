@@ -38,7 +38,7 @@ require 'view/partial/banner.php';
                     </td>
                     <td class="p-4">
                         <a href="/akademi/index.php/students/edit?id=<?= $student['id'] ?>" class="cursor-pointer border-2 p-2 border-blue-400 rounded-lg text-blue-400"><i class="bi bi-pencil-square"></i></a>
-                        <span class="cursor-pointer border-2 p-2 border-red-500 rounded-lg text-red-500"><i class="bi bi-trash3"></i></span>
+                        <button onclick="deleteAlert()" class="cursor-pointer border-2 p-2 border-red-500 rounded-lg text-red-500"><i class="bi bi-trash3"></i></button>
                     </td>
                 </tr>
             <?php endforeach; ?>

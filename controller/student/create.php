@@ -1,7 +1,6 @@
 <?php
 
-$config = require 'Core/database/config.php';
-$db = new Database($config['database']);
+$db = get_database();
 
 require 'Core/PersonalInformationForm.php';
 $personalInformationForm = new PersonalInformationForm();
@@ -10,8 +9,7 @@ $personalInformationForm->is_valid($_POST, $_FILES['photo']);
 if (!empty($personalInformationForm->errors)) {
     Session::put('errors', $personalInformationForm->errors);
     Session::put('details', $_POST);
-    header('location: /akademi/index.php/students/add');
-    die();
+    view('addStudent.view.php', ['heading' => "Add New Student"]);
 }
 
 extract($_POST);
@@ -31,8 +29,5 @@ if (move_uploaded_file($tmp_name, "asset/image/students/$name")) {
             ":address" => $address
         ]
     );
-    header('location: /akademi/index.php/students');
-    die();
+    redirect('location: /akademi/index.php/students');
 }
-
-dd("ERROR");
