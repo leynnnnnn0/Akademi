@@ -17,15 +17,15 @@ require 'view/partial/banner.php';
             </div>
             <div class="flex flex-col gap-2">
                 <label for="firstName" class="text-indigo-900 font-bold text-sm">First Name *</label>
-                <input type="text" name="firstName" id="firstName" class="border border-gray-300 h-8 rounded-md">
+                <input placeholder="John" type="text" name="firstName" id="firstName" class="border border-gray-300 h-8 rounded-md">
             </div>
             <div class="flex flex-col gap-2">
                 <label for="middleInitial" class="text-indigo-900 font-bold text-sm">Middle Initial</label>
-                <input type="text" name="middleInitial" id="middleInitial" class="border border-gray-300 h-8 rounded-md">
+                <input placeholder="Hawt" type="text" name="middleInitial" id="middleInitial" class="border border-gray-300 h-8 rounded-md">
             </div>
             <div class="flex flex-col gap-2">
                 <label for="lastName" class="text-indigo-900 font-bold text-sm">Last Name *</label>
-                <input type="text" name="lastName" id="lastName" class="border border-gray-300 h-8 rounded-md">
+                <input placeholder="Doe" type="text" name="lastName" id="lastName" class="border border-gray-300 h-8 rounded-md">
             </div>
             <div class="flex flex-col gap-2">
                 <label for="dateOfBirth" class="text-indigo-900 font-bold text-sm">Date of Birth *</label>
@@ -37,15 +37,15 @@ require 'view/partial/banner.php';
         <div class="flex flex-col gap-2">
             <div class="flex flex-col gap-2">
                 <label for="email" class="text-indigo-900 font-bold text-sm">Email *</label>
-                <input type="email" name="email" id="email" class="border border-gray-300 h-8 rounded-md">
+                <input placeholder="johndoe@gmail.com" type="email" name="email" id="email" class="border border-gray-300 h-8 rounded-md">
             </div>
             <div class="flex flex-col gap-2">
                 <label for="phoneNumber" class="text-indigo-900 font-bold text-sm">Phone Number *</label>
-                <input type="text" name="phoneNumber" id="phoneNumber" class="border border-gray-300 h-8 rounded-md">
+                <input placeholder="92********" type="text" name="phoneNumber" id="phoneNumber" class="border border-gray-300 h-8 rounded-md">
             </div>
             <div class="flex flex-col gap-2">
                 <label for="address" class="text-indigo-900 font-bold text-sm">Address *</label>
-                <textarea type="text" name="address" id="address" class="border border-gray-300 h-20 rounded-md"></textarea>
+                <textarea placeholder="California, USA" type="text" name="address" id="address" class="border border-gray-300 h-20 rounded-md"></textarea>
             </div>
             <div class="flex h-full justify-end items-end">
                 <div class="flex gap-2">
