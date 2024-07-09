@@ -11,13 +11,13 @@
                     Dashboard
                 </a>
             </div>
-            <div class="flex items-center w-full h-12 py-2 px-4 rounded-l-3xl cursor-pointer <?= isUrl("/akademi/index.php/students") ?>">
+            <div class="flex items-center w-full h-12 py-2 px-4 rounded-l-3xl cursor-pointer <?= isUrl("/akademi/index.php/students") ?> <?= isUrl("/akademi/index.php/students/add") ?>">
                 <a href="/akademi/index.php/students">
                     <span class="mr-4"><i class="bi bi-backpack"></i></span>
                     Students
                 </a>
             </div>
-            <div class="flex items-center w-full h-12 py-2 px-4 rounded-l-3xl  cursor-pointer <?= isUrl("/akademi/index.php/teachers") ?>">
+            <div class="flex items-center w-full h-12 py-2 px-4 rounded-l-3xl  cursor-pointer <?= isUrl("/akademi/index.php/teachers") ?> <?= isUrl("/akademi/index.php/teachers/add") ?>">
                 <a href="/akademi/index.php/teachers">
                     <span class="mr-4"><i class="bi bi-briefcase"></i></span>
                     Teachers

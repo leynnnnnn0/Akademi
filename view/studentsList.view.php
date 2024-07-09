@@ -5,7 +5,7 @@ require 'view/partial/banner.php';
 ?>
 
 <div class="flex justify-end">
-    <button class="bg-indigo-600 text-white text-sm px-5 py-3 text-semibold rounded-full cursor-pointer"><span><i class="bi bi-plus-lg"></i></span> New Student</button>
+    <a href="/akademi/index.php/students/add" class="bg-indigo-600 text-white text-sm px-5 py-3 text-semibold rounded-full cursor-pointer"><span><i class="bi bi-plus-lg"></i></span> New Student</a>
 </div>
 <!-- Students table -->
 <div class="w-full bg-white rounded-2xl mt-4">

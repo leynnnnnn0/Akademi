@@ -6,7 +6,7 @@ require 'view/partial/banner.php';
 
 <!-- add teacher button -->
 <div class="flex justify-end">
-    <button class="bg-indigo-600 text-white text-sm px-5 py-3 text-semibold rounded-full cursor-pointer"><span><i class="bi bi-plus-lg"></i></span> New Teacher</button>
+    <a href="/akademi/index.php/teachers/add" class="bg-indigo-600 text-white text-sm px-5 py-3 text-semibold rounded-full cursor-pointer"><span><i class="bi bi-plus-lg"></i></span> New Teacher</a>
 </div>
 
 <div class="flex gap-5 mt-4">
