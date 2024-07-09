@@ -5,7 +5,7 @@ require 'view/partial/banner.php';
 ?>
 
 <div class="flex justify-end">
-    <button class="bg-indigo-600 text-white px-5 py-3 text-semibold rounded-full cursor-pointer"><span><i class="bi bi-plus-lg"></i></span> New Student</button>
+    <button class="bg-indigo-600 text-white text-sm px-5 py-3 text-semibold rounded-full cursor-pointer"><span><i class="bi bi-plus-lg"></i></span> New Student</button>
 </div>
 <!-- Students table -->
 <div class="w-full bg-white rounded-2xl mt-4">
@@ -31,8 +31,8 @@ require 'view/partial/banner.php';
                 <td class="p-4 text-xs text-indigo-800">California, USA</td>
                 <td class="p-4 text-xs text-indigo-800">
                     <div class="flex items-center gap-2">
-                        <span class="cursor-pointer text-indigo-900 font-bold text-lg bg-indigo-100 rounded-full p-2"><i class="bi bi-telephone"></i></span>
-                        <span class="cursor-pointer text-indigo-900 font-bold text-lg bg-indigo-100 rounded-full p-2"><i class="bi bi-envelope"></i></span>
+                        <span class="cursor-pointer text-indigo-600 font-bold text-lg bg-indigo-200 rounded-full p-1 h-8 w-8 text-center"><i class="bi bi-telephone"></i></span>
+                        <span class="cursor-pointer text-indigo-600 font-bold text-lg bg-indigo-200 rounded-full p-1 h-8 w-8 text-center"><i class="bi bi-envelope"></i></span>
                     </div>
                 </td>
                 <td class="p-4 text-center">
