@@ -4,7 +4,11 @@ require 'view/partial/sidebar.php';
 require 'view/partial/banner.php';
 ?>
 
-<div class="w-full bg-white rounded-2xl">
+<div class="flex justify-end">
+    <button class="bg-indigo-600 text-white px-5 py-3 text-semibold rounded-full cursor-pointer"><span><i class="bi bi-plus-lg"></i></span> New Student</button>
+</div>
+<!-- Students table -->
+<div class="w-full bg-white rounded-2xl mt-4">
     <table class="w-full table-auto">
         <thead class="border-b text-indigo-600 text-left text-xs border-b-gray-200">
             <tr>
