@@ -4,7 +4,9 @@ $db = get_database();
 
 require 'Core/PersonalInformationForm.php';
 $personalInformationForm = new PersonalInformationForm();
-$personalInformationForm->is_valid($_POST, $_FILES['photo']);
+$personalInformationForm->is_valid($_POST);
+$personalInformationForm->image($_FILES['photo']);
+$personalInformationForm->email($_POST['email']);
 
 if (!empty($personalInformationForm->errors)) {
     Session::put('errors', $personalInformationForm->errors);

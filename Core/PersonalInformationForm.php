@@ -4,12 +4,23 @@ class PersonalInformationForm
 {
     public $errors = [];
 
-    public function is_valid($informations, $photo)
+    public function image(array $photo)
     {
-        extract($informations);
         if (Validator::image($photo)) {
             $this->errors["photo"] = 'Please input a valid photo';
         }
+    }
+
+    public function email($email)
+    {
+        if (Validator::is_email_unique($email)) {
+            $this->errors['email'] = 'Email is already used';
+        }
+    }
+
+    public function is_valid($informations)
+    {
+        extract($informations);
         if (Validator::string($firstName)) {
             $this->errors['firstName'] = 'First name is required';
         }
@@ -22,9 +33,7 @@ class PersonalInformationForm
         if (Validator::email($email)) {
             $this->errors['email'] = 'Please input a valid email';
         }
-        if (Validator::is_email_unique($email)) {
-            $this->errors['email'] = 'Email is already used';
-        }
+        
         if (Validator::phone($phoneNumber)) {
             $this->errors['phoneNumber'] = 'Please input a valid phone number.';
         }
