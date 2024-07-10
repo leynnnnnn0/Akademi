@@ -8,8 +8,17 @@ document.addEventListener("DOMContentLoaded", function () {
     events: events,
     selectable: true,
     dateClick: (info) => {
-      console.log(info);
+      console.log(info.dateStr);
+      addEvent(info.dateStr, "TEST", info.dateStr);
     },
   });
   calendar.render();
 });
+
+const addEvent = (id, title, start) => {
+  events.push({
+    id: id,
+    title: title,
+    start: start,
+  });
+};

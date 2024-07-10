@@ -14,7 +14,7 @@ require 'view/partial/banner.php';
             <input type="text" name="id" hidden value="<?= $student['id'] ?>">
             <img src="/akademi/asset/image/students/<?= Session::get_recent_input('photo') ?? $student['image'] ?>" class="h-24 w-24 rounded-full" alt="profile">
             <input type="text" hidden value="PUT" name="_method">
-            <input type="text" hidden value="<?= $student['image'] ?>" name="photo">
+            <input type="text" hidden value="<?= $student['image'] ?>" name="currentImage">
             <input type="text" hidden name="current_email" value="<?= $student['email'] ?>" />
         </div>
         <!-- Column 1 -->

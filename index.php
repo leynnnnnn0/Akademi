@@ -3,7 +3,9 @@
 session_start();
 require 'Core/Session.php';
 require 'Core/database/Database.php';
+require 'Core/Errors.php';
 require 'Core/functions.php';
+
 require 'Core/Route/Router.php';
 $router = new Router();
 require 'Core/Route/routes.php';

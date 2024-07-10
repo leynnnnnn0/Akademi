@@ -40,3 +40,28 @@ const deleteAlert = (studentId, image) => {
     }
   });
 };
+
+const createStudent = async (event) => {
+  // Prevent tha page to reload
+  // The problem with this method is that the errors from the $_SESSION can't be displayed because the page is not refreshed
+  event.preventDefault();
+  // To send the data to our php file
+  var form = document.getElementById("studentForm");
+  var formData = new FormData(form);
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", "/akademi/index.php/students/add", true);
+  xhr.onload = () => {
+    if (xhr.status === 200) {
+      console.log(xhr.response);
+    }
+  };
+  xhr.send(formData);
+  // After data validate the data
+  // If it has an error, display errors
+  // else fire this
+  Swal.fire({
+    title: "Good job!",
+    text: "You clicked the button!",
+    icon: "success",
+  });
+};

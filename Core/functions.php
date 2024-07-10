@@ -40,3 +40,15 @@ function view($path, $data = [])
     extract($data);
     return require "view/$path";
 }
+
+function internal_server_error($path)
+{
+    Session::put('error', "Internal Server Error.");
+    redirect('/akademi/index.php/students');
+}
+
+function user_input_error($errors, $inputs)
+{
+    Session::put('errors', $errors);
+    Session::put('details', $inputs);
+}

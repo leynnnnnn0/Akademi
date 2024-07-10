@@ -71,12 +71,14 @@ require 'view/partial/banner.php';
             <div class="flex h-full justify-end items-end">
                 <div class="flex gap-2">
                     <a class="rounded-full px-4 py-1 border border-indigo-600 text-indigo-600" href="/akademi/index.php/students">Cancel</a>
-                    <button type="submit" class="rounded-full px-4 py-1 bg-indigo-600 text-white">Submit</button>
+                    <button type="submit" class="rounded-full px-4 py-1 bg-indigo-600 text-white" onclick="">Submit</button>
                 </div>
             </div>
         </div>
     </form>
 </div>
+
+
 
 <?php
 require 'view/partial/footer.php';
