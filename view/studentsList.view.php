@@ -36,9 +36,11 @@ require 'view/partial/banner.php';
                             <span class="cursor-pointer text-indigo-600 font-bold text-lg bg-indigo-200 rounded-full p-1 h-8 w-8 text-center"><i class="bi bi-envelope"></i></span>
                         </div>
                     </td>
-                    <td class="p-4">
+                    <td class="p-4 flex gap-2">
                         <a href="/akademi/index.php/students/edit?id=<?= $student['id'] ?>" class="cursor-pointer border-2 p-2 border-blue-400 rounded-lg text-blue-400"><i class="bi bi-pencil-square"></i></a>
-                        <button onclick="deleteAlert()" class="cursor-pointer border-2 p-2 border-red-500 rounded-lg text-red-500"><i class="bi bi-trash3"></i></button>
+
+                        <button type="submit" onClick="deleteAlert(<?= $student['id'] ?>)" class="cursor-pointer border-2 p-2 border-red-500 rounded-lg text-red-500"><i class="bi bi-trash3"></i></button>
+
                     </td>
                 </tr>
             <?php endforeach; ?>

@@ -10,6 +10,7 @@ if (!empty($personalInformationForm->errors)) {
     Session::put('errors', $personalInformationForm->errors);
     Session::put('details', $_POST);
     view('addStudent.view.php', ['heading' => "Add New Student"]);
+    return;
 }
 
 extract($_POST);
@@ -29,5 +30,6 @@ if (move_uploaded_file($tmp_name, "asset/image/students/$name")) {
             ":address" => $address
         ]
     );
-    redirect('location: /akademi/index.php/students');
+    echo "success";
+    redirect('/akademi/index.php/students');
 }

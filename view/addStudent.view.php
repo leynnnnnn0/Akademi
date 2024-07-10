@@ -8,7 +8,7 @@ require 'view/partial/banner.php';
     <div class="h-15 bg-indigo-600 py-2 px-5 rounded-t-2xl">
         <p class="text-white font-semibold text-lg">Personal Details</p>
     </div>
-    <form class="grid grid-cols-2 gap-4 h-fit rounded-b-2xl bg-white p-5" method="post" enctype="multipart/form-data">
+    <form method="POST" id="studentForm" class="grid grid-cols-2 gap-4 h-fit rounded-b-2xl bg-white p-5" enctype="multipart/form-data">
         <!-- Column 1 -->
         <div class="flex flex-col gap-2">
             <div class="flex flex-col gap-2">
