@@ -1,9 +1,12 @@
 <?php
 
 $id = $_POST['id'];
+$photo = $_POST['image'];
 
 $db = get_database();
 
-$stmt = $db->query("DELETE FROM students WHERE id = :id", [':id' => $id]);
+$db->query("DELETE FROM students WHERE id = :id", [':id' => $id]);
 
+$filePath = $_SERVER['DOCUMENT_ROOT'] . "/akademi/asset/image/students/$photo";
 
+unlink($filePath);
