@@ -1,4 +1,5 @@
-const deleteAlert = (studentId, image) => {
+const deleteConfirmationAlert = (event, studentId, image) => {
+    event.preventDefault();
   const xhr = new XMLHttpRequest();
   // Create an object with data to send
   const data = {
@@ -21,7 +22,7 @@ const deleteAlert = (studentId, image) => {
     confirmButtonText: "Yes, delete it!",
   }).then((result) => {
     if (result.isConfirmed) {
-      xhr.open("POST", "/akademi/index.php/students/destroy", true);
+      xhr.open("POST", "/akademi/index.php/teachers/destroy", true);
       xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
       xhr.onload = () => {
         if (xhr.status === 200) {
@@ -40,4 +41,3 @@ const deleteAlert = (studentId, image) => {
     }
   });
 };
-

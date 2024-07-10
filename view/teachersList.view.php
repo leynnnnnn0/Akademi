@@ -11,7 +11,7 @@ require 'view/partial/banner.php';
 
 <div class="flex flex-wrap gap-5 mt-4">
     <?php foreach ($teachers as $teacher) : ?>
-        <a href="/akademi/index.php/teachers/edit?id=<?= $teacher['id'] ?>" class="flex flex-col gap-2 items-center h-auto w-48 bg-white p-4 rounded-2xl">
+        <a href="/akademi/index.php/teachers/edit?id=<?= $teacher['id'] ?>" class="flex flex-col gap-2 items-center h-auto w-48 bg-white p-4 rounded-2xl hover:opacity-75">
             <img src="/akademi/asset/image/teachers/<?= $teacher['image'] ?>" class="h-16 w-16 rounded-full" alt="profile picture">
             <p class="text-indigo-900 font-bold text-md text-center"><?= $teacher['firstName'] ?> <?= $teacher['lastName'] ?></p>
             <p class="text-gray-500 font-light text-xs"><?= $teacher['dateOfBirth'] ?></p>

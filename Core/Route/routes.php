@@ -18,6 +18,10 @@ $router->put("/akademi/index.php/students/edit", "controller/student/edit.php");
 $router->post("/akademi/index.php/teachers/add", "controller/teacher/create.php");
 $router->get("/akademi/index.php/teachers/edit", "controller/editTeacher.php");
 $router->put("/akademi/index.php/teachers/edit", "controller/teacher/edit.php");
+$router->post("/akademi/index.php/teachers/destroy", "controller/teacher/destroy.php");
 
 // Alerts 
 $router->get("/akademi/index.php/result", "Core/sessionAlerts.php");
+
+// Events 
+$router->post("/akademi/index.php/events/add", "controller/event/create.php");
