@@ -8,7 +8,7 @@ $personalInformationForm = new PersonalInformationForm();
 $personalInformationForm->is_valid($_POST);
 $personalInformationForm->image($_FILES['photo']);
 try{
-    $personalInformationForm->email($_POST['email']);
+    $personalInformationForm->email($_POST['email'], "students");
 }catch(Exception $e){
     Errors::internal_server_error('/akademi/index.php/students');
 }

@@ -12,7 +12,7 @@ require 'view/partial/banner.php';
         </div>
         <div class="flex flex-col justify-center items-center">
             <h6 class="text-gray-500 text-sm">Students</h6>
-            <h1 class="font-bold text-indigo-600 text-3xl"><?= $count ?></h1>
+            <h1 class="font-bold text-indigo-600 text-3xl"><?= $studentsCount ?></h1>
         </div>
     </div>
     <!-- Teacher -->
@@ -22,7 +22,7 @@ require 'view/partial/banner.php';
         </div>
         <div class="flex flex-col justify-center items-center">
             <h6 class="text-gray-500 text-sm">Teachers</h6>
-            <h1 class="font-bold text-indigo-600 text-3xl">0</h1>
+            <h1 class="font-bold text-indigo-600 text-3xl"><?= $teacherCount ?></h1>
         </div>
     </div>
     <!-- Events -->

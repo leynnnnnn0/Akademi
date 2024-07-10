@@ -14,11 +14,11 @@ class Validator
         return false;
     }
 
-    public static function is_email_unique(string $email): bool
+    public static function is_email_unique(string $email, string $table): bool
     {
         $config = require 'Core/database/config.php';
         $db = new Database($config['database']);
-        $stmt = $db->query("SELECT * from students WHERE email = :email;", [":email" => $email]);
+        $stmt = $db->query("SELECT * from $table WHERE email = :email;", [":email" => $email]);
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
         if ($result) return true;
         return false;

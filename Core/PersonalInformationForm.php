@@ -11,9 +11,9 @@ class PersonalInformationForm
         }
     }
 
-    public function email($email)
+    public function email($email, $table)
     {
-        if (Validator::is_email_unique($email)) {
+        if (Validator::is_email_unique($email, $table)) {
             $this->errors['email'] = 'Email is already used';
         }
     }
@@ -33,7 +33,7 @@ class PersonalInformationForm
         if (Validator::email($email)) {
             $this->errors['email'] = 'Please input a valid email';
         }
-        
+
         if (Validator::phone($phoneNumber)) {
             $this->errors['phoneNumber'] = 'Please input a valid phone number.';
         }
