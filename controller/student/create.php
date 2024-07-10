@@ -3,6 +3,7 @@
 $db = get_database();
 
 require 'Core/PersonalInformationForm.php';
+require 'Core/Image.php';
 $personalInformationForm = new PersonalInformationForm();
 $personalInformationForm->is_valid($_POST);
 $personalInformationForm->image($_FILES['photo']);
@@ -21,7 +22,7 @@ if (!empty($personalInformationForm->errors)) {
 extract($_POST);
 extract($_FILES['photo']);
 
-if (move_uploaded_file($tmp_name, "asset/image/students/$name")) {
+if (Image::add($tmp_name, "asset/image/students/$name")) {
     try {
         $stmt = $db->query(
             "INSERT INTO students (image, firstName, middleName, lastName, dateOfBirth, email, phoneNumber, address) VALUES (:image, :firstName, :middleName, :lastName, :dateOfBirth, :email, :phoneNumber, :address);",

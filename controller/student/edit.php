@@ -2,7 +2,7 @@
 
 $db = get_database();
 $currentEmail = $_POST['current_email'];
-
+require 'Core/Image.php';
 require 'Core/PersonalInformationForm.php';
 $personalInformationForm = new PersonalInformationForm();
 $personalInformationForm->is_valid($_POST);
@@ -27,15 +27,15 @@ extract($_POST);
 
 if ($_FILES['photo']['size'] != 0) {
     extract($_FILES['photo']);
-    if (move_uploaded_file($tmp_name, "asset/image/students/$name")) {
+    if (Image::add($tmp_name, "asset/image/students/$name")) {
         $filePath = $_SERVER['DOCUMENT_ROOT'] . "/akademi/asset/image/students/$currentImage";
-        unlink($filePath);
-    } else{
+        Image::remove($filePath);
+    } else {
         Errors::internal_server_error("/akademi/index.php/students");
     }
 }
 
-$photo = $_FILES['photo']['name'] ?? $currentImage;
+$photo = $_FILES['photo']['name'] !== "" ? $_FILES['photo']['name'] : $currentImage;
 
 try {
     $db->query(
