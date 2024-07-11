@@ -25,3 +25,4 @@ $router->get("/akademi/index.php/result", "Core/sessionAlerts.php");
 
 // Events 
 $router->post("/akademi/index.php/events/add", "controller/event/create.php");
+$router->get("/akademi/index.php/events/getAll", "controller/event/show.php");
