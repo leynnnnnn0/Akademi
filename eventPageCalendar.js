@@ -67,7 +67,8 @@ document.addEventListener("DOMContentLoaded", () => {
       addNewEvent(calendar, info.dateStr);
     },
     eventClick: (info) => {
-      deleteEvent(info.event.id);
+      // deleteEvent(info.event.id);
+      eventInformation(info.event.id, info.event.title, info.event.start);
     },
   });
   calendar.render();
@@ -120,6 +121,26 @@ const addNewEvent = (calendar, start) => {
         formData.append(key, data[key]);
       }
       xhr.send(formData);
+    }
+  });
+};
+
+const eventInformation = (id, title, start) => {
+  Swal.fire({
+    title: `<h1 class="text-indigo-600">${title.toUpperCase()}</h1>`,
+    icon: "info",
+    html: `
+      Event for: ${start}
+    `,
+    showCloseButton: true,
+    showCancelButton: true,
+    focusConfirm: false,
+    confirmButtonText: "DELETE",
+    confirmButtonColor: "RED",
+    cancelButtonText: "OKAY!",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      deleteEvent(id);
     }
   });
 };
