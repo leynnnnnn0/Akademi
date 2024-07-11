@@ -26,6 +26,9 @@
             <div class="flex items-center w-full h-12 text-indigo-50 py-2 px-4 rounded-l-3xl cursor-pointer <?= isUrl("/akademi/index.php/events") ?>">
                 <a href="/akademi/index.php/events"><span class="mr-4"><i class="bi bi-calendar4-event"></i></span> Events</a>
             </div>
+            <div class="flex items-center w-full h-12 text-indigo-50 py-2 px-4 rounded-l-3xl cursor-pointer <?= isUrl("/akademi/index.php/chats") ?>">
+                <a href="/akademi/index.php/chats"><span class="mr-4"><i class="bi bi-chat"></i></span> Chats</a>
+            </div>
         </div>
     </div>
     <div class="bg-indigo-50 col-span-4">
