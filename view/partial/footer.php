@@ -10,6 +10,7 @@
 <script src="/akademi/controller/student/alerts.js"></script>
 <script src="/akademi/controller/teacher/alert.js"></script>
 <script src="/akademi/alert.js"></script>
+<script src="/akademi/chat.js"></script>
 <script>
     const result = <?php echo isset($_SESSION['success']) ? json_encode(true) : json_encode(false); ?>;
     if (result) {
