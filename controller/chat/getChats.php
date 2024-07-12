@@ -32,6 +32,7 @@ echo "<div class='flex gap-3 items-center h-20 border-b border-indigo-100'>
 </div>
 </div>
 <div class='flex flex-col gap-2 flex-1 p-2'>" . $msgs . "</div>
-<div class='flex items-center h-20'>
-<input class='border w-full border-indigo-200 rounded-full' type='text' placeholder='Write your message'>
+<div class='flex items-center h-20 gap-2'>
+<input class='border w-full border-indigo-200 rounded-full' type='text' id='messageInput' placeholder='Write your message'>
+<button id='sendMessageButton' data-receiver='". $receiver_id ."' data-sender='". $sender_id ."'><span class='font-bold text-2xl text-indigo-600'><i class='bi bi-send'></i></span></button>
 </div>";
