@@ -32,3 +32,4 @@ $router->post("/akademi/index.php/events/delete", "controller/event/destroy.php"
 // Chats
 $router->post("/akademi/index.php/chats", "controller/chat/userLookUp.php");
 $router->post("/akademi/index.php/chats/conversation", "controller/chat/getChats.php");
+$router->post("/akademi/index.php/chats/conversation/send", "controller/chat/sendChat.php");
