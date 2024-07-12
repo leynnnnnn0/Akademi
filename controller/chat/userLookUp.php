@@ -10,7 +10,7 @@ $filteredTeachers = $query->fetchAll();
 
 $output = '';
 foreach ($filteredTeachers as $teacher) {
-    $output .= "<div class='border-b border-indigo-100 mb-2'>
+    $output .= "<div onclick='getConversation(" . $teacher['id'] . ")' class='cursor-pointer border-b border-indigo-100 mb-2'>
                     <div class='h-15 flex items-center p-2 gap-3'>
                         <div>
                             <img class='h-12 w-12 rounded-full' src='/akademi/asset/image/teachers/" . $teacher['image'] . "' alt='profile'>
