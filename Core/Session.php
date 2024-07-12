@@ -19,6 +19,7 @@ class Session
 
     public static function unset()
     {
-        $_SESSION = [];
+        unset($_SESSION['details']);
+        unset($_SESSION['errors']);
     }
 }

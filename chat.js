@@ -36,6 +36,20 @@ const getConversation = (id) => {
   xhr.send(`id=${id}`);
 };
 
+setInterval(() => {
+  const xhr = new XMLHttpRequest();
+  console.log("TEST");
+  xhr.open("POST", "/akademi/index.php/chats/conversation", true);
+  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  xhr.onload = () => {
+    if (xhr.status === 200) {
+      const data = xhr.response;
+      conversationBox.innerHTML = data;
+    }
+  };
+  xhr.send();
+}, 500);
+
 // Send message
 
 document.addEventListener("click", () => {

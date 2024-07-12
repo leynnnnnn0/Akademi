@@ -1,7 +1,7 @@
 <?php
 
 // Pages
-$router->get("/akademi/", "controller/dashboard.php");
+$router->get("/akademi/", "controller/dashboard.php")->only("authorized");
 $router->get("/akademi/index.php/students", "controller/studentsList.php");
 $router->get("/akademi/index.php/students/add", "controller/addStudent.php");
 $router->get("/akademi/index.php/teachers", "controller/teachersList.php");
@@ -36,7 +36,10 @@ $router->post("/akademi/index.php/chats/conversation/send", "controller/chat/sen
 
 
 // Sign in and Sign up
-$router->get("/akademi/index.php/signup", "controller/signup.php");
+$router->get("/akademi/index.php/signup", "controller/signup.php")->only("guest");
 $router->post("/akademi/index.php/signup", "controller/registration/create.php");
-$router->get("/akademi/index.php/signin", "controller/signin.php");
+$router->get("/akademi/index.php/signin", "controller/signin.php")->only("guest");
 $router->post("/akademi/index.php/signin", "controller/authorization/authorize.php");
+
+// Log out
+$router->get("/akademi/index.php/logout", "controller/authorization/logout.php");

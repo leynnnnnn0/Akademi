@@ -1,5 +1,5 @@
 <?php
-$heading = "Dashboard";
+$heading = "Hello " . $_SESSION['user']['firstName'] . "!";
 
 $db = get_database();
 $studentsCount = $db->query("SELECT * FROM students");
