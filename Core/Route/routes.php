@@ -33,3 +33,10 @@ $router->post("/akademi/index.php/events/delete", "controller/event/destroy.php"
 $router->post("/akademi/index.php/chats", "controller/chat/userLookUp.php");
 $router->post("/akademi/index.php/chats/conversation", "controller/chat/getChats.php");
 $router->post("/akademi/index.php/chats/conversation/send", "controller/chat/sendChat.php");
+
+
+// Sign in and Sign up
+$router->get("/akademi/index.php/signup", "controller/signup.php");
+$router->post("/akademi/index.php/signup", "controller/registration/create.php");
+$router->get("/akademi/index.php/signin", "controller/signin.php");
+$router->post("/akademi/index.php/signin", "controller/authorization/authorize.php");

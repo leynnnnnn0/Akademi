@@ -57,4 +57,25 @@ class Validator
     {
         return $value === null || empty($value);
     }
+
+    public static function password(string $password): bool
+    {
+        return strlen($password) < 8;
+    }
+
+    public static function correct_password($data): bool
+    {
+        extract($data);
+        $db = get_database();
+        $stmt = $db->query("SELECT * FROM accounts WHERE email = :email", [":email" => $email]);
+
+        $account = $stmt->fetch();
+        if (!$account) {
+            return false;
+        }
+        if (password_verify($password, $account['pwd'])) {
+            return true;
+        }
+        return false;
+    }
 }

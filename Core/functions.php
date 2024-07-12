@@ -38,7 +38,8 @@ function get_database()
 function view($path, $data = [])
 {
     extract($data);
-    return require "view/$path";
+    require "view/$path";
+    die();
 }
 
 function internal_server_error($path)
