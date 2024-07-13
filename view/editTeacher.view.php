@@ -12,10 +12,10 @@ require 'view/partial/banner.php';
         <!-- Column 0 -->
         <div>
             <input type="text" name="id" hidden value="<?= $teacher['id'] ?>">
-            <img src="/akademi/asset/image/teachers/<?= Session::get_recent_input('photo') ?? $teacher['image'] ?>" class="h-24 w-24 rounded-full" alt="profile">
+            <img src="/akademi/asset/image/teachers/<?= Session::get_recent_input('currentImage') ?? $teacher['image'] ?>" class="h-24 w-24 rounded-full" alt="profile">
             <input type="text" hidden value="PUT" name="_method">
             <input type="text" hidden value="<?= $teacher['image'] ?>" name="currentImage">
-            <input type="text" hidden name="current_email" value="<?= $teacher['email'] ?>" />
+            <input type="text" hidden name="current_email" value="<?= Session::get_recent_input('current_email') ?? $teacher['email'] ?>" />
         </div>
         <!-- Column 1 -->
         <div class="flex flex-col gap-2 col-span-2">
