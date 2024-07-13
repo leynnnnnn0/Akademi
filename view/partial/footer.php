@@ -20,6 +20,9 @@
             icon: "success",
         })
     }
+    <?php if (isset($_SESSION['success'])) {
+        unset($_SESSION['success']);
+    } ?>
 </script>
 </body>
 

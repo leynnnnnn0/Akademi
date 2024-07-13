@@ -11,6 +11,8 @@ require 'view/partial/banner.php';
         </form>
         <div class="flex-1" id="teachersList">
             <?php foreach ($teachers as $teacher) : ?>
+                <?php if ($teacher['email'] === $_SESSION['user']['email']) continue; ?>
+
                 <div onclick="getConversation(<?= $teacher['id'] ?>)" class="cursor-pointer border-b border-indigo-100 mb-2">
                     <div class="h-15 flex items-center p-2 gap-3">
                         <div>
