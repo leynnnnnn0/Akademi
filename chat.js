@@ -35,10 +35,9 @@ const getConversation = (id) => {
   };
   xhr.send(`id=${id}`);
 };
-
+//Update conversation every 0.5 seconds
 setInterval(() => {
   const xhr = new XMLHttpRequest();
-  console.log("TEST");
   xhr.open("POST", "/akademi/index.php/chats/conversation", true);
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
   xhr.onload = () => {
@@ -52,43 +51,21 @@ setInterval(() => {
 
 // Send message
 
-document.addEventListener("click", () => {
-  const messageInput = document.getElementById("messageInput");
+document.addEventListener("DOMContentLoaded", () => {
+  // const messageInput = document.getElementById("messageInput");
   const messageButton = document.getElementById("sendMessageButton");
-  const receiverId = messageButton.getAttribute("data-receiver");
-  const senderId = messageButton.getAttribute("data-sender");
-
-  messageButton.addEventListener("click", () => {
+  // const receiverId = messageButton.getAttribute("data-receiver");
+  // const senderId = messageButton.getAttribute("data-sender");
+  const form = document.getElementById("messageForm");
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    console.log("SUBMITTED");
     const xhr = new XMLHttpRequest();
+    const formData = new FormData(form);
     xhr.open("POST", "/akademi/index.php/chats/conversation/send", true);
-    const data = {
-      message: messageInput.value,
-      receiver_id: receiverId,
-      sender_id: senderId,
-    };
-    const formData = new URLSearchParams();
-    for (const key in data) {
-      formData.append(key, data[key]);
-    }
-    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xhr.onload = () => {
       if (xhr.status === 200) {
         console.log(xhr.response);
-        if (JSON.parse(xhr.response).status === "success") {
-          const xhr = new XMLHttpRequest();
-          xhr.open("POST", "/akademi/index.php/chats/conversation", true);
-          xhr.setRequestHeader(
-            "Content-Type",
-            "application/x-www-form-urlencoded"
-          );
-          xhr.onload = () => {
-            if (xhr.status === 200) {
-              const data = xhr.response;
-              conversationBox.innerHTML = data;
-            }
-          };
-          xhr.send(`id=${receiverId}`);
-        }
         messageInput.value = "";
       }
     };

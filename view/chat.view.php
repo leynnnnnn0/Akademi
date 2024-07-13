@@ -26,9 +26,17 @@ require 'view/partial/banner.php';
         </div>
     </div>
     <!-- Column 2 -->
-    <div id="conversationBox" class="col-span-2 h-full flex flex-col p-5">
-        <h1 class="text-center flex-1 font-bold text-indigo-600">Select a conversation to get started.</h1>
-    </div>
+    <form class="col-span-2 h-full flex flex-col p-5" id="messageForm" method="post">
+        <div id="conversationBox" class="flex-1">
+
+
+        </div>
+        <!-- <h1 class="text-center flex-1 font-bold text-indigo-600">Select a conversation to get started.</h1> -->
+        <div class='flex items-center h-20 gap-2'>
+            <input class='border w-full border-indigo-200 rounded-full' type='text' name="message" id='messageInput' placeholder='Write your message'>
+            <button type="submit" id='sendMessageButton'><span class='font-bold text-2xl text-indigo-600'><i class='bi bi-send'></i></span></button>
+        </div>
+    </form>
 </div>
 <?php
 require 'view/partial/footer.php';
